@@ -1,24 +1,50 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
-var APP_DIR = path.resolve(__dirname, 'src/client/app');
+const extractCommons = new webpack.optimize.CommonsChunkPlugin({
+    name: 'commons',
+    filename: 'commons.js'
+})
 
-var config = {
-    entry: APP_DIR + '/index.jsx',
-    output: {
-        path: BUILD_DIR,
-        filename: 'bundle.js'
+const config = {
+    context: path.resolve(__dirname, 'src'),
+    entry: {
+        app: './app.js',
+	    admin: './admin.js'
     },
-    module : {
-        loaders : [
-            {
-                test : /\.jsx?/,
-                include : APP_DIR,
-                loader : 'babel-loader'
-            }
-        ]
-    }
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/dist/',
+        filename: '[name].bundle.js'
+    },
+    module: {
+        rules: [{
+            test: /\.scss$/,
+	        loader: ['style-loader', 'css-loader','sass-loader']
+	    }, {
+            test: /\.js$/,
+            include: path.resolve(__dirname, 'src'),
+            use: [{
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        ['es2015', {modules: false }]
+                    ]
+                }
+            }]
+        }, {
+	        test: /\.(png|jpg)$/,
+	        use: [{
+	            loader: 'url-loader',
+		        options: { limit: 10000 } //convert images < 10k to base64 strings
+	        }]
+
+	    }]
+    },
+    plugins: [
+        extractCommons,
+	    new webpack.NamedModulesPlugin()
+    ]
 }
 
 module.exports = config;
