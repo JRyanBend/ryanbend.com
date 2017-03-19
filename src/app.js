@@ -6,11 +6,11 @@ if (module.hot) {
 
 import React from "react";
 import ReactDOM from 'react-dom';
-import Header from "./header";
+import Main from "./common/main";
 import './style.scss'
 
 ReactDOM.render(
-    <Header />,
+    <Main />,
     document.getElementById("root")
 );
 

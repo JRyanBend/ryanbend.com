@@ -1,15 +1,50 @@
-@import url('https://fonts.googleapis.com/css?family=Open+sans:400,700');
-$bluegrey: #2b3a42;
+/* ----- */
+/* Fonts */
+/* ----- */
+@import url('https://fonts.googleapis.com/css?family=Open+sans:400,700,400i');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
 
 
+/* --------- */
+/* Variables */
+/* --------- */
+$base: #2b3a42;
+$highlight: #2e4a3b;
+$alt: #313348;
+$text-normal: 14px;
+$text-large: 1.4em;
+$text-xlarge: 2em;
+$text-small:0.8em;
+
+
+/* ----------- */
+/* Base Styles */
+/* ----------- */
 body {
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #333;
+}
+
+a {
+	color: $alt;
+}
+
+.heading {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: $text-xlarge;
+	text-align: center;
+
+	&--sub {
+		text-align: left;
+		font-size: $text-large;
+	}
 }
 
 .header {
     padding: 20px;
-    background: $bluegrey no-repeat center center / 32px 32px;
+    background: $base no-repeat center center / 32px 32px;
     color: #dedede;
     text-shadow: 0 1px 1px rgba(#000, 0.5);
     text-align: center;
@@ -26,7 +61,55 @@ body {
     img {
         -webkit-animation: spin 4s infinite linear;
     }
+
+    .button {
+    	min-width: 100px;
+    	text-align: center;
+    	color: #dedede;
+    }
 }
+
+.page {
+	max-width: 1200px;
+	margin: 2em auto 4em;
+	padding: 0 2em;
+}
+
+.footer {
+	background: lighten($base, 10%);
+	color: #dedede;
+    text-shadow: 0 1px 1px rgba(#000, 0.5);
+    text-align: center;
+    padding: 20px;
+}
+
+.quote {
+	text-decoration: italic;
+}
+
+
+/* -------- */
+/* Elements */
+/* -------- */
+.button {
+	padding: 0.8em;
+	font-size: $text-large;
+	background-color: lighten($highlight, 10%);
+	transition: background-color 0.5s;
+	border: darker($highlight, 50%);
+	display: inline-block;
+	margin: 0 0.5em;
+	cursor: pointer;
+
+	&:hover {
+		background-color: lighten($highlight, 20%);
+	}
+}
+
+
+/* ---------- */
+/* Animations */
+/* ---------- */
 
 @-webkit-keyframes spin {
     0%  {-webkit-transform: rotate(0deg);}
