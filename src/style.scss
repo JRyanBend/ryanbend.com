@@ -20,6 +20,16 @@ $text-small:0.8em;
 /* ----------- */
 /* Base Styles */
 /* ----------- */
+.clear:before,
+.clear:after {
+    content: " ";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
 body {
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
@@ -49,13 +59,13 @@ a {
     text-shadow: 0 1px 1px rgba(#000, 0.5);
     text-align: center;
 
-    h2 {
+    .heading {
     	font-size: 34px;
     	font-weight: 700;
     }
 
     p {
-    	font-size: 18Px;
+    	font-size: 18px;
     }
 
     img {
@@ -67,13 +77,34 @@ a {
     	text-align: center;
     	color: #dedede;
     }
+
+    &__circle {
+    	height: 15em;
+    	width: 15em;
+    	border-radius: 100%;
+    	border: 5px solid #fff;
+    	margin: 2em auto;
+    	background-color: #ccc;
+    }
 }
 
 .page {
+	position: relative;
 	max-width: 1200px;
 	margin: 2em auto 4em;
 	padding: 0 2em;
+	transition: all 1s;
+	right: -100%;
+	
+	&--show{
+		right: 0;
+	}
+
+	&--hide {
+		right: 100%;
+	}
 }
+
 
 .footer {
 	background: lighten($base, 10%);
@@ -84,7 +115,25 @@ a {
 }
 
 .quote {
-	text-decoration: italic;
+	font-style: italic;
+}
+
+
+/* ----- */
+/* Pages */
+/* ----- */
+
+.projects {
+	width: 840px;
+	margin: 0 auto;
+}
+
+.projects_item {
+	height: 200px;
+	width: 400px;
+	background-color: #ccc;
+	margin: 0 10px 10px;
+	float: left;
 }
 
 
@@ -98,7 +147,7 @@ a {
 	transition: background-color 0.5s;
 	border: darker($highlight, 50%);
 	display: inline-block;
-	margin: 0 0.5em;
+	margin: 0.1em 0.5em;
 	cursor: pointer;
 
 	&:hover {
