@@ -3,18 +3,23 @@
 /* ----- */
 @import url('https://fonts.googleapis.com/css?family=Open+sans:400,700,400i');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Yellowtail');
+
 
 
 /* --------- */
 /* Variables */
 /* --------- */
 $base: #2b3a42;
+$base-text: #dedede;
 $highlight: #2e4a3b;
 $alt: #313348;
 $text-normal: 14px;
 $text-large: 1.4em;
 $text-xlarge: 2em;
 $text-small:0.8em;
+
+$base_padding: 1.5em;
 
 
 /* ----------- */
@@ -24,7 +29,8 @@ body {
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
-	color: #333;
+	color: $base-text;
+	background: $base;
 }
 
 a {
@@ -32,7 +38,6 @@ a {
 }
 
 .heading {
-	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: $text-xlarge;
 	text-align: center;
 
@@ -43,9 +48,7 @@ a {
 }
 
 .header {
-    padding: 20px;
-    background: $base no-repeat center center / 32px 32px;
-    color: #dedede;
+    padding: $base_padding;
     text-shadow: 0 1px 1px rgba(#000, 0.5);
     text-align: center;
 
@@ -66,6 +69,20 @@ a {
     	min-width: 100px;
     	text-align: center;
     	color: #dedede;
+
+    }
+
+    &__hero {
+    	padding: 4em 2em;
+    	max-width: 40%;
+    	margin: 10% auto 2%;
+    	border: 3px dashed #eee;
+    	border-radius: 15px;
+
+    }
+
+    &__block {
+    	
     }
 }
 
@@ -77,16 +94,20 @@ a {
 
 .footer {
 	background: lighten($base, 10%);
-	color: #dedede;
     text-shadow: 0 1px 1px rgba(#000, 0.5);
     text-align: center;
     padding: 20px;
 }
 
 .quote {
-	text-decoration: italic;
+	font-family: 'Amatic SC', cursive;
+	font-size: $text-large;
 }
 
+.quote-author {
+	font-family: 'Yellowtail', cursive;
+	font-size: $text-large;
+}
 
 /* -------- */
 /* Elements */
@@ -98,7 +119,7 @@ a {
 	transition: background-color 0.5s;
 	border: darker($highlight, 50%);
 	display: inline-block;
-	margin: 0 0.5em;
+	margin: 2em 0.5em;
 	cursor: pointer;
 
 	&:hover {
@@ -107,11 +128,17 @@ a {
 }
 
 
-/* ---------- */
+/* ----------- */
 /* Animations */
-/* ---------- */
+/* --------- */
 
 @-webkit-keyframes spin {
     0%  {-webkit-transform: rotate(0deg);}
     100% {-webkit-transform: rotate(360deg);}   
 }
+
+/* -------------- */
+/* Media Queries */
+/* ------------ */
+
+@media 

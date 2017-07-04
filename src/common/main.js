@@ -9,8 +9,8 @@ export default React.createClass({
         return (
         	<div className="main">
 	            <Header />
-	            <Blog />
-	            <Portfolio />
+	            {/*<Blog />
+	            <Portfolio />*/}
 	            <Footer />
             </div>
         );

@@ -4,10 +4,15 @@ export default React.createClass({
     render: function() {
         return (
             <div className="header">
-            	<img src="/src/code.png" />
-	       		<h2>RYANBEND.COM</h2>
-	       		<a className="header__button button">Portfolio</a>
-	       		<a className="header__button button">Blog</a>
+	            <div className="header__hero">
+		       		<h2 className="heading">J Ryan Bend</h2>
+		       		<img className="header__img" src="/src/code.png" />
+		       		<div className="header__block">
+			       		<a className="header__button button">Web Developer</a>
+			       		<a className="header__button button">Agile Enthusiast</a>
+			       		<a className="header__button button">Gentleman Rogue</a>
+		       		</div>
+	       		</div>
 	   		</div>
         );
     },
