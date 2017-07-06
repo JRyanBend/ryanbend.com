@@ -2,7 +2,7 @@ import React from "react";
 import Header from './header'
 import Footer from './footer'
 import Blog from '../views/blog'
-import Portfolio from '../views/portfolio'
+import Projects from '../views/projects'
 
 export default React.createClass({
     render: function() {
