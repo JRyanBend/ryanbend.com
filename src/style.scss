@@ -2,8 +2,7 @@
 /* Fonts */
 /* ----- */
 @import url('https://fonts.googleapis.com/css?family=Open+sans:400,700,400i');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Yellowtail');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Faster+One');
 
 
 
@@ -11,6 +10,11 @@
 /* Variables */
 /* --------- */
 $base: #2b3a42;
+$base-light: #3f5561;
+$base-dark: #1A2E38;
+$comp: #685642;
+$comp-light: #C2AC91;
+$comp-dark: #594227;
 $base-text: #dedede;
 $highlight: #2e4a3b;
 $alt: #313348;
@@ -58,13 +62,14 @@ a {
 }
 
 .header {
-    padding: $base_padding;
     text-shadow: 0 1px 1px rgba(#000, 0.5);
     text-align: center;
 
     .heading {
-    	font-size: 34px;
+    	font-size: 5em;
+    	color: $comp-light;
     	font-weight: 700;
+    	font-family: "Faster One", sans-serif;
     }
 
     p {
@@ -79,6 +84,10 @@ a {
     	min-width: 100px;
     	text-align: center;
     	color: #dedede;
+    	background-color: $comp-dark;
+    	&:hover {
+    		background-color: $comp;
+    	}
 
     }
 
@@ -86,9 +95,9 @@ a {
     	padding: 4em 2em;
     	max-width: 40%;
     	margin: 10% auto 2%;
-    	border: 3px dashed #eee;
+    	border: 4px dashed #eee;
     	border-radius: 15px;
-
+    	background-color: $base-dark;
     }
 
     &__block {
@@ -127,18 +136,29 @@ a {
 	background: lighten($base, 10%);
     text-shadow: 0 1px 1px rgba(#000, 0.5);
     text-align: center;
+    color: #fff;
     padding: 20px;
+    font-family: 'Amatic SC', cursive;
+	font-size: $text-xlarge;
 }
 
-.quote {
-	font-family: 'Amatic SC', cursive;
-	font-size: $text-large;
+.footer__link {
+	color: #fff;
+	background: lighten($base, 10%);
+	border: 1px solid lighten($base, 10%);
+	transition: all 0.5s;
+	padding: 3px;
 }
 
-.quote-author {
-	font-family: 'Yellowtail', cursive;
-	font-size: $text-large;
+.footer__link:hover {
+	border: 1px solid #fff;
+	background-color: $base;
 }
+
+.footer__spacer {
+	font-style: italic;
+}
+
 
 /* -------- */
 /* Elements */
@@ -172,4 +192,19 @@ a {
 /* Media Queries */
 /* ------------ */
 
+@media screen and (max-width: 950px) {
+	.header {
+		&__hero {
+			max-width: 100%;
+			margin: 0;
+			border-top: none;
+			border-left: none;
+			border-right: none;
+			border-radius: 0;
 
+			.button {
+				margin: 1em 0.5em;
+			}
+		}
+	}
+}

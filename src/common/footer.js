@@ -4,8 +4,7 @@ export default React.createClass({
     render: function() {
         return (
             <div className="footer">
-	       		<p className="quote">Programmers are as emotional and irrational as normal people</p>
-	       		<span className="quote-author">- Douglas Crockford</span>
+				<a className="footer__link" href="">Github</a><span className="footer__spacer"> --||-- </span><a className="footer__link" href="">Linkedin</a>
 	   		</div>
         );
     },
