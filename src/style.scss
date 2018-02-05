@@ -2,7 +2,7 @@
 /* Fonts */
 /* ----- */
 @import url('https://fonts.googleapis.com/css?family=Open+sans:400,700,400i');
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Faster+One');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Playfair+Display');
 
 
 
@@ -69,7 +69,8 @@ a {
     	font-size: 5em;
     	color: $comp-light;
     	font-weight: 700;
-    	font-family: "Faster One", sans-serif;
+    	font-family: "Playfair Display", serif;
+    	text-decoration: underline;
     }
 
     p {
@@ -95,9 +96,8 @@ a {
     	padding: 4em 2em;
     	max-width: 40%;
     	margin: 10% auto 2%;
-    	border: 4px dashed #eee;
-    	border-radius: 15px;
     	background-color: $base-dark;
+    	box-shadow: 0px 0px 2px #fff;
     }
 
     &__block {
