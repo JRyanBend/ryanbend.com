@@ -1,1 +1,1 @@
-webpackJsonp([1,2],{"./admin.js":function(e,n,o){"use strict";document.querySelector("#root").innerHTML="<p>There are ${people.length} people.</p>"}},["./admin.js"]);
+webpackJsonp([1],{"./admin.js":function(e,n,o){"use strict";document.querySelector("#root").innerHTML="<p>There are ${people.length} people.</p>"}},["./admin.js"]);
